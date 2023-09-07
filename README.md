@@ -12,9 +12,9 @@ Bot checking if messages contain an invitation to a Discord server.
 8. Done!
 
 # ➕ Modules
-- [discord.js@14](https://www.npmjs.com/package/discord.js)
+- [discord.js@v14](https://www.npmjs.com/package/discord.js)
 - [dotenv](https://www.npmjs.com/package/dotenv)
-- [is-discord-invite](https://www.npmjs.com/package/is-discord-invite)
+- [is-discord-invite@v2](https://www.npmjs.com/package/is-discord-invite)
 
 # 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
