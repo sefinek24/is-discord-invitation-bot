@@ -2,20 +2,34 @@
   "name": "is-discord-invitation-bot",
   "version": "0.1.0",
   "description": "A Discord bot written in Discord.js v14, checking if messages are an invitation to any Discord server.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "discord-invitation",
+    "discord-invitation-bot",
+    "discord-invite",
+    "discord-invite-bot",
+    "discord-invites",
+    "discord-invites-bot",
+    "discord-invites-checker",
+    "discord-invites-checker-bot",
+    "discord.js",
+    "is-discord-invitation"
+  ],
+  "homepage": "https://github.com/sefinek24/is-discord-invitation-bot#readme",
+  "bugs": {
+    "url": "https://github.com/sefinek24/is-discord-invitation-bot/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sefinek24/is-discord-invitation-bot.git"
   },
-  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sefinek24/is-discord-invitation-bot/issues"
+  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/sefinek24/is-discord-invitation-bot#readme",
   "dependencies": {
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1",
