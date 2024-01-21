@@ -10,25 +10,31 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', async msg => {
-	if (msg.author.bot || msg.channel.type === 'dm') return; // Ignore messages from bots and private messages (user => bot).
-	if (msg.content.length <= 10) return; // Ignore messages that have less than 10 characters.
+	if (msg.author.bot || msg.channel.type === 'dm') return; // Ignore messages from bots and private messages (user => bot)
+	if (msg.content.length <= 10) return; // Ignore messages that have less than 10 characters
 
-	const result = await isInvitation.online(msg.content); // Validate the received message using api.sefinek.net.
+	const result = await isInvitation.online(msg.content); // Validate the received message using Discord API v10
+	if (!result) return console.log('An error occurred while validating the invitation.');
 
 	if (result.isInvitation) {
+		if (result.guild.id === msg.guild.id) {
+			await msg.reply('This invitation is associated with this server. No actions have been taken.');
+			return console.log(`The user ${msg.author.username} sent an invitation associated with the server where the message was sent`);
+		}
+
 		await msg.delete();
 		msg.channel.send(`
-		${msg.author}, you cannot send any invitations on this server!
+			${msg.author}, you cannot send any invitations on this server!
 		
-		- **Guild name:** ${result.discordResponse.guild.name}
-		- **Guild ID:** ${result.discordResponse.guild.id}
-		- **Inviter:** ${result.discordResponse.inviter.username} (${result.discordResponse.inviter.global_name})
-		- **Inviter ID:** ${result.discordResponse.inviter.id}`,
+			- **Guild name:** ${result.guild.name}
+			- **Guild ID:** \`${result.guild.id}\`
+			- **Inviter:** ${result.inviter.username} (${result.inviter.global_name})
+			- **Inviter ID:** \`${result.inviter.id}\``,
 		);
 
-		console.log('Message is an invitation:', result.discordResponse);
+		console.log('Message is an invitation!');
 	} else {
-		console.log('Message is not an invitation');
+		console.log('Message is not an invitation.');
 	}
 });
 
