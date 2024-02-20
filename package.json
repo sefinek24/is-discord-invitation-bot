@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.4.4",
+    "dotenv": "^16.4.5",
     "is-discord-invite": "^3.0.0"
   }
 }
